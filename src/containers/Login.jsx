@@ -25,7 +25,7 @@ const Login = () => {
                             <div className="mb-6">
                                 <label className="block text-sm text-gray-500 mb-2"> Password : </label>
                                 <div>
-                                <input type="password" placeholder="Enter password" className="border border-zinc-400 rounded-sm h-9 w-80 text-sm px-2" />                
+                                    <input type="password" placeholder="Enter password" className="border border-zinc-400 rounded-sm h-9 w-80 text-sm px-2" />                
                                 </div>
                             </div>
 

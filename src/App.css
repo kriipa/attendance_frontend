@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@300;400&family=Roboto:wght@100;400&display=swap');
+
+*{
+  font-family: 'Roboto', sans-serif;
+}
+
+.react-calendar button:enabled{
+  border-radius: 20px;
+}
+
+.react-calendar button:enabled:hover{
+  background-color: burlywood;
+}
+
+
+/* .react-calendar__tile--active {
+  background: #006edc;
+  color: rgb(84, 34, 34);
+} */
+
+.react-calendar__tile--now {
+  color: rgb(170, 206, 71);
+}
+
+.react-calendar__tile--hasActive{
+  background: #006edc;
+  color: rgb(84, 34, 34);
+}
