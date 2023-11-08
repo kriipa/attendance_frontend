@@ -6,7 +6,7 @@ function CustomCalender() {
     return (
         <div>
             <div className=' p-5'>
-                <Calendar className="h-full w-1/2 rounded-xl " />
+                <Calendar className="h-full max-w-full  rounded-xl " />
             </div>
         </div>
     );

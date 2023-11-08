@@ -15,41 +15,61 @@ export default function EmployeesForm() {
             id : 1,
             title : 'First Name',
             key : 'firstName',
-            placeholder : 'Enter your first name',
+            placeholder : "Enter staff's  first name",
         },
         {
             id : 2,
             title : 'Last Name',
             key : 'lastName',
-            placeholder : 'Enter your last name',
+            placeholder : "Enter staff's  last name",
         },
         {
             id : 3,
             title : 'Address',
             key : 'address',
-            placeholder : 'Enter your address',
+            placeholder : "Enter staff's address",
         },
         {
             id : 4,
             title : 'Email',
             key : 'email',
-            placeholder : 'Enter your email',
+            placeholder :"Enter staff's  email",
         },
         {
             id : 5,
             title : 'Discord Id',
             key : 'discordId',
-            placeholder : 'Enter your discord id',
+            placeholder : "Enter staff's discord id",
         },
         {
             id : 6,
+            title : 'Staff Id',
+            key : 'staffId',
+            placeholder : "Enter staff's Id",
+        },
+        {
+            id : 7,
             title : 'Role',
             key : 'role',
             placeholder : 'Enter your role',
         },
     ]
 
+    const [data, setData] = useState();
+
     console.log(form)
+
+    const storage = () => {
+        localStorage.setItem('employees', JSON.stringify(form));
+    }
+
+    const getEmployees = () => {
+        const emp = localStorage.getItem('employees');
+        const empData = JSON.parse(emp);
+        setData(empData);
+    }
+    console.log(data)
+
     return (
         <div className='flex justify-center mt-16'>
             <div className='border-2  border-slate-400 rounded-xl w-[600px] p-4 px-14 flex flex-wrap gap-[4%]'>
@@ -74,9 +94,27 @@ export default function EmployeesForm() {
                     })
                 }
                 <div className='flex justify-end w-[100%]'>
-                    <button className='inline-block p-1 mt-4  w-56 rounded-md hover:bg-gray-600 bg-sky-900 hover:shadow-md text-white'>Submit</button>
+                    <button
+                        onClick={()=>storage()}
+                        className='inline-block p-1 mt-4  w-56 rounded-md hover:bg-gray-600 bg-sky-900 hover:shadow-md text-white'>
+                        Submit
+                    </button>
+                    
+                    <button
+                        onClick={()=>getEmployees()}
+                        className='inline-block p-1 mt-4  w-56 rounded-md hover:bg-gray-600 bg-pink-900 hover:shadow-md text-white'>
+                        Get
+                    </button>
                 </div>
-                {/* <p>{form.address}</p> */}
+            </div>
+            <div>
+            
+                <p>First Name : {data && data?.firstName}</p>
+                <p>Last Name : {data && data?.lastName}</p>
+                <p>Address : {data && data?.address}</p>
+                <p>Email : {data && data?.email}</p>
+                <p>Discord ID : {data && data?.discordId}</p>
+                <p>Role : {data && data?.role}</p>
             </div>
         </div> 
     )

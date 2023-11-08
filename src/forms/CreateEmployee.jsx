@@ -5,6 +5,10 @@ export default function CreateEmployee() {
         firstName : '',
         lastName : '',
         age : '',
+        address : '',
+        email : '',
+        doscordId : '',
+        role : '',
     });
 
     const FormList = [
@@ -29,6 +33,13 @@ export default function CreateEmployee() {
 
     ]
     console.log("form",form)
+    const storage = () => {
+        console.log("clicked")
+        // localStorage.setItem('employees', JSON.stringify(form));
+    }
+    const hello =()=>{
+        console.log("hello")
+    }
     return (
         <div className='border-2 w-[300px] flex justify-center'>
             <div>
@@ -54,7 +65,7 @@ export default function CreateEmployee() {
                     }
                 )
             }
-            <button> Submit </button>
+            <p onClick={()=>console.log("hello")}> Submit </p>
             </div>
         </div>
     )

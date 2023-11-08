@@ -1,6 +1,7 @@
 import * as React from 'react'
 import ReactDOM from 'react-dom/client'
 import './Table.css'
+import { useEffect } from 'react'
 
     import {
     createColumnHelper,
@@ -8,6 +9,7 @@ import './Table.css'
     getCoreRowModel,
     useReactTable,
     } from '@tanstack/react-table'
+import axios from 'axios'
 
 
     const defaultData  = [
@@ -36,6 +38,7 @@ import './Table.css'
         num_of_employees: 14,
     },
     ]
+
 
     const columnHelper = createColumnHelper()
 
@@ -70,7 +73,8 @@ import './Table.css'
     }),
     ]
 
-    function Table() {
+    function Table({tableData}) {
+    // const [data, setData] = React.useState()
     const [data, setData] = React.useState(() => [...defaultData])
     // const rerender = React.useReducer(() => ({}), {})[1]
 
@@ -79,6 +83,8 @@ import './Table.css'
         columns,
         getCoreRowModel: getCoreRowModel(),
     })
+
+    console.log("tableData", tableData);
 
     return (
         <div className=" px-5 py-6 ">
