@@ -28,6 +28,10 @@ import LoginResp from './practice/LoginResp'
 import PatchMethod from './practice/PatchMethod'
 import EditPage from './practice/EditPage'
 import RegisterPage from './practice/RegisterPage'
+import CreateDepartmentModal from './components/CreateDepartmentModal'
+import OnePageDashboard from './OnepageDash/OnePageDashboard'
+import Slider from './OnepageDash/Slider'
+import SliderJS from './OnepageDash/Slider'
 
 
 function App() {
@@ -37,6 +41,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />}/>
+          <Route path="/one-page" element={<OnePageDashboard />}/>
           <Route element={<DashboardLayout/>}>
           <Route path="/dept" element={<Dept />}/>
           <Route path="/table" element={<Table />}/>
@@ -60,6 +65,8 @@ function App() {
           <Route path='/patch-method' element = {<PatchMethod />} />
           <Route path='/edit' element = {<EditPage />} />
           <Route path='/register' element = {<RegisterPage />} />
+          <Route path='/create-dept-modal' element = {<CreateDepartmentModal />} />
+          <Route path='/slider' element = {<SliderJS />} />
           </Route>
         </Routes>
       </BrowserRouter>

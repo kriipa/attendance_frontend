@@ -80,6 +80,12 @@ const SideBar = () => {
         icon:<IoMdLogIn/>,
         link:"/axios-page"
     },
+    {
+        id:11,
+        name:"Practice Dashboard",
+        icon:<LuLayoutDashboard/>,
+        link:"/one-page"
+    },
     ]
 
     useEffect(()=>{

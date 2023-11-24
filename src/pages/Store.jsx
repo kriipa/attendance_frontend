@@ -19,7 +19,6 @@ export default function Store() {
 
                 <button onClick={()=> getItem()}> Get</button>
             </div>
-
             <p>{data} </p>
         </div>
     )
